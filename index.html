@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saravana Kumar J — Go Backend Developer</title>
+<title>Me - Saravana Kumar J [Open to Work]</title>
 <meta name="description" content="Saravana Kumar J — Backend Systems Engineer. Open to Go Backend Developer roles.">
 <link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "light" || stored === "dark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
@@ -19,7 +30,8 @@
       <a href="#backend">backend</a>
       <a href="#ai-engineering">ai</a>
       <a href="#projects">projects</a>
-      <a href="#writing">writing</a>
+      <a href="writing.html">writing</a>
+      <button type="button" id="theme-toggle" class="btn theme-toggle" aria-label="Toggle dark mode">[ theme ]</button>
     </nav>
   </div>
 </header>
@@ -41,7 +53,7 @@
     </p>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
   <section id="about" class="wrap">
     <h2>About</h2>
@@ -60,7 +72,7 @@
     </ul>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
   <section id="contact" class="wrap">
     <h2>Contact</h2>
@@ -90,7 +102,7 @@
     </p>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
   <section id="technologies" class="wrap">
     <h2>Technologies</h2>
@@ -119,7 +131,7 @@
     </ul>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
   <section id="backend" class="wrap">
     <h2>Backend Systems</h2>
@@ -161,7 +173,7 @@
     </ul>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
   <section id="ai-engineering" class="wrap">
     <h2>AI Engineering</h2>
@@ -183,14 +195,15 @@
     </ul>
   </section>
 
-  <hr>
+  <div class="divider"><span>[ · ]</span></div>
 
-  <section id="projects" class="wrap wrap-wide">
+  <section id="projects" class="wrap">
     <h2>Featured Projects</h2>
 
     <div class="project-grid">
-      <article class="project">
+      <article class="project" data-detail="Implements the OAuth2 and OpenID Connect flows directly instead of relying on a hosted identity provider — authorization code flow, token issuance, and refresh rotation. Redis backs short-lived session and token-blacklist lookups; MySQL stores user and client records. Services talk to each other over gRPC behind an API gateway that handles routing and token verification.">
         <h3>Identity Service <span class="tag">In Progress</span></h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Distributed authentication platform in Go — built to learn how auth systems work internally.</p>
         <ul class="grid-list">
           <li>Go</li>
@@ -206,8 +219,9 @@
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/go-auth-service" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="Each client connection runs on its own goroutine, with channels fanning data out from a central broadcaster without blocking readers. The WebSocket layer sits on top of a raw TCP listener, modeled after how exchange market-data feeds push continuous ticks to many subscribers concurrently.">
         <h3>Go Real-Time Streaming</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>WebSocket/TCP streaming with concurrent processing, inspired by financial market data feeds.</p>
         <ul class="grid-list">
           <li>Go</li>
@@ -219,8 +233,9 @@
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/websock-market-stream" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="A bare TCP socket server — no HTTP or WebSocket framing — that accepts connections and spins up a goroutine per client to read and broadcast messages concurrently. Built to understand connection handling and concurrent I/O at the socket level before reaching for higher-level abstractions.">
         <h3>Multi-Client Chat (TCP)</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Chat server over raw TCP sockets handling multiple concurrent clients.</p>
         <ul class="grid-list">
           <li>Go</li>
@@ -232,8 +247,9 @@
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/multi-client-chat-TCP-based" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="A REST API backed by PostgreSQL for the friend graph and post history, with Redis enforcing the daily posting limit and caching API key lookups. JWT handles session auth; a separate API key layer handles service-to-service and third-party access.">
         <h3>PostOnce</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Backend-first social platform — auth, rate-limited posting, friend graph.</p>
         <ul class="grid-list">
           <li>JWT Authentication</li>
@@ -246,8 +262,9 @@
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/postonce-dev" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="A LangGraph state machine drives the workflow — lead validation, segmentation, and communication planning — as distinct graph nodes with retries and branching, rather than one long prompt. FastAPI exposes it as a service that orchestrates the LLM calls and hands off to execution once a plan is approved.">
         <h3>Campaign Automation Platform</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Agentic workflow platform for lead validation, campaign orchestration, and automated execution.</p>
         <ul class="grid-list">
           <li>LangGraph</li>
@@ -257,8 +274,9 @@
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/campaign_mgmt_langgraph" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="Qwen2.5 Coder fine-tuned with QLoRA — low-rank adapters over a quantized base model, so it's trainable on a single GPU — on the Spider and BIRD text-to-SQL datasets. Served behind a FastAPI inference endpoint that takes a natural-language question plus schema and returns an executable SQL query.">
         <h3>Text-to-SQL</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Fine-tuned Qwen model that converts natural language into SQL.</p>
         <ul class="grid-list">
           <li>QLoRA</li>
@@ -268,35 +286,19 @@
         </ul>
       </article>
 
-      <article class="project">
+      <article class="project" data-detail="Runs model outputs through a configurable judging pipeline — a second LLM call scores responses against a rubric and produces a reasoning trace explaining why a given score was assigned, rather than a single opaque number.">
         <h3>AI Evaluation Platform</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
         <p>Automated reasoning platform for evaluating AI outputs with configurable judging pipelines.</p>
       </article>
     </div>
 
+    <aside class="project-detail" id="project-detail">
+      <p class="project-detail-hint">Hover a project for details →</p>
+    </aside>
+
     <h3>Open Source</h3>
     <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/namma_wallet" target="_blank" rel="noopener">[ namma_wallet ]</a></p>
-  </section>
-
-  <hr>
-
-  <section id="writing" class="wrap">
-    <h2>Writing</h2>
-    <p>I occasionally write about backend engineering, Go, and distributed systems.</p>
-
-    <p class="section-label">Topics</p>
-    <ul class="grid-list">
-      <li>Backend Engineering</li>
-      <li>Distributed Systems</li>
-      <li>Go</li>
-      <li>Authentication</li>
-      <li>Building from Scratch</li>
-    </ul>
-
-    <p class="btn-row">
-      <!-- TODO: replace href with your blog URL -->
-      <a class="btn" href="#" target="_blank" rel="noopener">[ Visit Blog ]</a>
-    </p>
   </section>
 
 </main>
@@ -305,6 +307,10 @@
   <p>Saravana Kumar J — Chennai, India</p>
   <p><a class="btn" href="#top">[ Back to top ]</a></p>
 </footer>
+
+<div class="modal-overlay" id="project-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" id="project-modal-content"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
