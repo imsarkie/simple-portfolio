@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Me - Saravana Kumar J [Open to Work]</title>
+<title>Saravana Kumar J [Open to Work]</title>
 <meta name="description" content="Saravana Kumar J — Backend Systems Engineer. Open to Go Backend Developer roles.">
 <link rel="stylesheet" href="styles.css">
 <script>
@@ -22,9 +22,9 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="logo">saravana kumar j</a>
+    <a href="#top" class="logo">imsarkie</a>
     <nav class="top-nav">
-      <a href="#about">about</a>
+      <a href="#top">about</a>
       <a href="#contact">contact</a>
       <a href="#technologies">tech</a>
       <a href="#backend">backend</a>
@@ -43,21 +43,7 @@
     <h1>Saravana Kumar J</h1>
     <p class="lead">Backend Systems Engineer. Go, distributed systems, authentication.</p>
 
-    <p>I build backend services and distributed systems, and apply the same systems thinking to AI engineering. I build from scratch to understand internals — networking, auth, concurrency — rather than stopping at the framework.</p>
-
-    <p class="btn-row">
-      <a class="btn" href="https://github.com/imsarkie" target="_blank" rel="noopener">[ GitHub ]</a>
-      <a class="btn" href="https://linkedin.com/in/saravana-kumar-j" target="_blank" rel="noopener">[ LinkedIn ]</a>
-      <a class="btn" href="https://x.com/imSarkie" target="_blank" rel="noopener">[ X ]</a>
-      <a class="btn" href="mailto:mail.saravanakumarj@gmail.com">[ Email ]</a>
-    </p>
-  </section>
-
-  <div class="divider"><span>[ · ]</span></div>
-
-  <section id="about" class="wrap">
-    <h2>About</h2>
-    <p>Self-taught by building — backend APIs, distributed systems, AI agents, production platforms — instead of tutorials.</p>
+    <p>Building backend APIs, distributed systems, and AI agents, shipping production platforms while constantly learning. I build from scratch to understand internals like networking, auth, and concurrency, instead of stopping at the framework.</p>
 
     <p class="section-label">Currently focused on</p>
     <ul class="grid-list">
@@ -70,6 +56,13 @@
       <li>Docker</li>
       <li>PostgreSQL</li>
     </ul>
+
+    <p class="btn-row">
+      <a class="btn" href="https://github.com/imsarkie" target="_blank" rel="noopener">[ GitHub ]</a>
+      <a class="btn" href="https://linkedin.com/in/saravana-kumar-j" target="_blank" rel="noopener">[ LinkedIn ]</a>
+      <a class="btn" href="https://x.com/imSarkie" target="_blank" rel="noopener">[ X ]</a>
+      <a class="btn" href="mailto:mail.saravanakumarj@gmail.com">[ Email ]</a>
+    </p>
   </section>
 
   <div class="divider"><span>[ · ]</span></div>
@@ -159,7 +152,7 @@
       <li>MongoDB</li>
     </ul>
 
-    <h3>Currently Interested in</h3>
+    <h3>Currently grinding</h3>
     <ul class="grid-list">
       <li>Go concurrency</li>
       <li>Goroutines</li>
@@ -198,7 +191,7 @@
   <div class="divider"><span>[ · ]</span></div>
 
   <section id="projects" class="wrap">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
 
     <div class="project-grid">
       <article class="project" data-detail="Implements the OAuth2 and OpenID Connect flows directly instead of relying on a hosted identity provider — authorization code flow, token issuance, and refresh rotation. Redis backs short-lived session and token-blacklist lookups; MySQL stores user and client records. Services talk to each other over gRPC behind an API gateway that handles routing and token verification.">
@@ -217,6 +210,19 @@
           <li>Docker</li>
         </ul>
         <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/go-auth-service" target="_blank" rel="noopener">[ Code ]</a></p>
+      </article>
+
+      <article class="project" data-detail="Long URLs are encoded to base62 short codes, with an option to supply a custom code instead. MySQL persists the URL mappings while Redis caches lookups so redirects skip the database on repeat hits. A minimal web UI on top of the REST API lets you shorten and try links without a client.">
+        <h3>Go URL Shortener</h3>
+        <button type="button" class="project-info-btn" aria-label="View project details">i</button>
+        <p>URL shortener in Go with base62 encoding, MySQL storage, and Redis-cached redirects.</p>
+        <ul class="grid-list">
+          <li>Go</li>
+          <li>MySQL</li>
+          <li>Redis</li>
+          <li>REST APIs</li>
+        </ul>
+        <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/go-url-shortner" target="_blank" rel="noopener">[ Code ]</a></p>
       </article>
 
       <article class="project" data-detail="Each client connection runs on its own goroutine, with channels fanning data out from a central broadcaster without blocking readers. The WebSocket layer sits on top of a raw TCP listener, modeled after how exchange market-data feeds push continuous ticks to many subscribers concurrently.">
@@ -297,7 +303,7 @@
       <p class="project-detail-hint">Hover a project for details →</p>
     </aside>
 
-    <h3>Open Source</h3>
+    <h3>Open Source Contribution: </h3>
     <p class="btn-row"><a class="btn" href="https://github.com/imsarkie/namma_wallet" target="_blank" rel="noopener">[ namma_wallet ]</a></p>
   </section>
 
